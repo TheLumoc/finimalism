@@ -6982,21 +6982,40 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   right: 0.15em !important;
 }
 
-.layout-desktop
-  #itemDetailPage:has(.trackSelections:not(.hide))
-  .itemName.infoText.originalTitle,
-.layout-tv
-  #itemDetailPage:has(.trackSelections:not(.hide))
-  .itemName.infoText.originalTitle,
-.layout-desktop
-  #itemDetailPage:has(.trackSelections:not(.hide))
-  .itemDetailsGroup,
-.layout-tv
-  #itemDetailPage:has(.trackSelections:not(.hide))
-  .itemDetailsGroup,
-.layout-desktop #itemDetailPage:has(.trackSelections:not(.hide)) .itemGenres,
-.layout-tv #itemDetailPage:has(.trackSelections:not(.hide)) .itemGenres {
+.layout-desktop #itemDetailPage .itemName.infoText.originalTitle,
+.layout-tv #itemDetailPage .itemName.infoText.originalTitle,
+.layout-desktop #itemDetailPage .itemDetailsGroup,
+.layout-tv #itemDetailPage .itemDetailsGroup,
+.layout-desktop #itemDetailPage .itemGenres,
+.layout-tv #itemDetailPage .itemGenres {
   display: none !important;
+}
+
+.layout-desktop #castCollapsible .personCard .cardText,
+.layout-desktop #guestCastCollapsible .personCard .cardText,
+.layout-tv #castCollapsible .personCard .cardText,
+.layout-tv #guestCastCollapsible .personCard .cardText {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 0.82em !important;
+  line-height: 1.18em !important;
+}
+
+.layout-desktop #castCollapsible .personCard .cardText-first,
+.layout-desktop #castCollapsible .personCard .cardText-secondary,
+.layout-desktop #guestCastCollapsible .personCard .cardText-first,
+.layout-desktop #guestCastCollapsible .personCard .cardText-secondary,
+.layout-tv #castCollapsible .personCard .cardText-first,
+.layout-tv #castCollapsible .personCard .cardText-secondary,
+.layout-tv #guestCastCollapsible .personCard .cardText-first,
+.layout-tv #guestCastCollapsible .personCard .cardText-secondary {
+  display: -webkit-box !important;
+  max-height: 2.36em !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .layout-desktop #itemDetailPage #castCollapsible,
