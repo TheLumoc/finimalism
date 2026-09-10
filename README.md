@@ -16,6 +16,15 @@ Note: For Jellyfin Media Player, you need the latest [Jellyfin Desktop 2.0.0](ht
 @import url("https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism12.css");
 ```
 
+## V12 with the V11 layout (community port, alpha)
+```css
+@import url("https://cdn.jsdelivr.net/gh/TheLumoc/finimalism@main/FinimalismLegacy12.css");
+```
+
+`FinimalismLegacy12.css` preserves the V11 design while adding compatibility
+fixes for Jellyfin Web 12. The port currently targets the standard desktop and
+TV web layouts. It does not require any Jellyfin plugins.
+
 <table>
 <tr>
 <td width="50%" valign="top">
