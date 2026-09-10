@@ -23,7 +23,12 @@ Note: For Jellyfin Media Player, you need the latest [Jellyfin Desktop 2.0.0](ht
 
 `FinimalismLegacy12.css` preserves the V11 design while adding compatibility
 fixes for Jellyfin Web 12. The port currently targets the standard desktop and
-TV web layouts. It does not require any Jellyfin plugins.
+TV web layouts. It is a complete, self-contained stylesheet; do not import
+`Finimalism11.css` separately. It does not require any Jellyfin plugins.
+
+The current alpha includes Jellyfin 12 fixes for full-screen item backdrops,
+media-selector and cast spacing, cast-card text containment, season navigation,
+and a restrained homepage spacing and hover refresh.
 
 <table>
 <tr>

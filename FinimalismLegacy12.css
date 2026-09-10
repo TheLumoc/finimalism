@@ -6888,3 +6888,129 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   .itemsContainer.scrollX::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--accent));
 }
+
+/* -------------------------------------------------------------------------
+ * Jellyfin 12 compatibility: detail-page spacing
+ *
+ * Keep the fixed media selectors above the cast row. Jellyfin 12 gives the
+ * selectors a taller rendered box than V11, causing them to cover the cast
+ * heading and the first people cards at 16:9 resolutions.
+ * ---------------------------------------------------------------------- */
+
+.layout-desktop #itemDetailPage .trackSelections,
+.layout-tv #itemDetailPage .trackSelections {
+  top: 36.8em !important;
+  bottom: auto !important;
+  z-index: 4;
+}
+
+.layout-desktop #itemDetailPage .trackSelections .selectContainer,
+.layout-tv #itemDetailPage .trackSelections .selectContainer {
+  min-height: 0;
+  margin-top: 0.05em;
+  margin-bottom: 0.05em;
+}
+
+.layout-desktop #itemDetailPage #castCollapsible,
+.layout-desktop #itemDetailPage #guestCastCollapsible,
+.layout-tv #itemDetailPage #castCollapsible,
+.layout-tv #itemDetailPage #guestCastCollapsible {
+  z-index: 2;
+}
+
+.layout-desktop #castCollapsible .personCard .cardFooter,
+.layout-desktop #guestCastCollapsible .personCard .cardFooter,
+.layout-tv #castCollapsible .personCard .cardFooter,
+.layout-tv #guestCastCollapsible .personCard .cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 4.7em;
+  overflow: hidden;
+}
+
+.layout-desktop #castCollapsible .personCard .cardText,
+.layout-desktop #guestCastCollapsible .personCard .cardText,
+.layout-tv #castCollapsible .personCard .cardText,
+.layout-tv #guestCastCollapsible .personCard .cardText {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+.layout-desktop #castCollapsible .personCard .cardText-secondary,
+.layout-desktop #guestCastCollapsible .personCard .cardText-secondary,
+.layout-tv #castCollapsible .personCard .cardText-secondary,
+.layout-tv #guestCastCollapsible .personCard .cardText-secondary {
+  margin-top: 0.15em !important;
+}
+
+/* -------------------------------------------------------------------------
+ * Jellyfin 12 homepage polish
+ *
+ * Preserve the V11 grid and typography while improving spacing and feedback.
+ * ---------------------------------------------------------------------- */
+
+@media all and (min-width: 100em) {
+  .layout-desktop #indexPage,
+  .layout-tv #indexPage {
+    padding-top: 2.75em !important;
+  }
+}
+
+.layout-desktop #homeTab .verticalSection,
+.layout-tv #homeTab .verticalSection {
+  margin-bottom: 1.35em;
+}
+
+.layout-desktop #homeTab .sectionTitleContainer-cards,
+.layout-tv #homeTab .sectionTitleContainer-cards {
+  padding-top: 0.65em;
+  padding-bottom: 0.25em;
+}
+
+.layout-desktop #homeTab .sectionTitle,
+.layout-tv #homeTab .sectionTitle {
+  font-size: 1.18em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0.08em 0.35em rgba(0, 0, 0, 0.7);
+}
+
+.layout-desktop #homeTab .card .cardBox,
+.layout-tv #homeTab .card .cardBox {
+  border: 1px solid transparent;
+  border-radius: var(--rounding);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.layout-desktop #homeTab .card:hover .cardBox,
+.layout-tv #homeTab .card:focus .cardBox {
+  transform: translateY(-0.22em);
+  border-color: rgba(var(--accent), 0.35);
+  box-shadow:
+    0 0.65em 1.5em rgba(0, 0, 0, 0.38),
+    0 0 1.2em rgba(var(--accent), 0.1);
+}
+
+.layout-desktop #homeTab .cardText-first,
+.layout-tv #homeTab .cardText-first {
+  padding-top: 0.35em;
+  line-height: 1.18;
+  font-weight: 600;
+}
+
+.layout-desktop #homeTab .cardText-secondary,
+.layout-tv #homeTab .cardText-secondary {
+  line-height: 1.15;
+  opacity: 0.78;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-desktop #homeTab .card .cardBox,
+  .layout-tv #homeTab .card .cardBox {
+    transition: none;
+  }
+}
